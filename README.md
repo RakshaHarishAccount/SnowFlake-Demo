@@ -5,7 +5,7 @@ This repository contains the data (CSV files) and SQL/Python code that will be u
 2. Folder "SQLs" contains the SQL codes in sequence to perform end-to-end ETL demo on snowflake.
 3. Folder "Output Snowflake tables" contains the outputs of the SQL code.
 
-## Steps
+## Steps for Implementation
 
 1. In snowflake, create the data warehouse called "etl_wh" using the SQL "1. Warehouse & DB Creation.sql". In this warehouse create the "nyc_taxi_demo_db" database.
 2. Create 3 schemas in the "nyc_taxi_demo_db" database - (a) raw_layer (b) staging_layer (c) serving_layer
