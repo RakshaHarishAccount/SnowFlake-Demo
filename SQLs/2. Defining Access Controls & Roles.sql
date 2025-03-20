@@ -4,7 +4,7 @@ USE ROLE ACCOUNTADMIN; -- updated role to account admin
 GRANT MANAGE GRANTS ON ACCOUNT TO ROLE SYSADMIN; -- insufficient access
 SHOW USERS; -- shows the list of all users 
 SHOW GRANTS TO USER RHARISH; -- only SYSADMIN granted currently
--- GRANT ROLE ACCOUNTADMIN TO USER RHARISH; -- insufficient access
+-- GRANT ROLE ACCOUNTADMIN TO USER RHARISH; -- if AccountAdmin access is not granted already
 -------------------------------------------------------
 
 -- Note: To execute below SQL, the user must have "AccountAdmin" role assigned 
