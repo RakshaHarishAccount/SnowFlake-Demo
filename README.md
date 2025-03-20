@@ -14,3 +14,8 @@ This repository contains the data (CSV files) and SQL/Python code that will be u
 5. To perform transforms on the raw table and land it as a transformed data table in the staging_layer, execute the SQL "4. Staging Layer - Transformations.sql"
 6. Finally, to build the serving_layer table from the staging_layer table, execute the SQL "5. Serving Layer.sql"
 7. Optional - To check the account billing history incurred due to ETL implementation, execute  the SQL "6. Billing History Tracker.sql"
+
+## To Do
+
+1. Add another CSV source to show multiple table ingestion
+2. Implement SnowPark with Python
