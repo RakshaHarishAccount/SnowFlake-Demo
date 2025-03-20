@@ -17,5 +17,6 @@ This repository contains the data (CSV files) and SQL/Python code that will be u
 
 ## To Do
 
-1. Add another CSV source to show multiple table ingestion
-2. Implement SnowPark with Python
+1. Implement SnowPark with Python
+2. Add another CSV source to show multiple table ingestion
+3. Time-Travel scenario implementation in 7th SQL file  
