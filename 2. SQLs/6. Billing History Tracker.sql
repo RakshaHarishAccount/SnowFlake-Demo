@@ -5,4 +5,4 @@ ORDER BY START_TIME DESC;
 
 -- (2) Check Snowpipe usage
 SELECT * FROM SNOWFLAKE.ACCOUNT_USAGE.PIPE_USAGE_HISTORY
-ORDER BY START_TIME DESC;
+ORDER BY START_TIME DESC; -- currently empty as snowpipe to S3/ADLS not implemented
