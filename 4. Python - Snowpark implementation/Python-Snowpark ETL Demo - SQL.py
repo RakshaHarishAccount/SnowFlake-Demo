@@ -24,7 +24,7 @@ def main(session: snowpark.Session):
     
     # Create the raw data table in "raw_layer" schema of the database
     create_table_query = """
-    CREATE OR REPLACE TABLE nyc_taxi_demo_db.raw_layer.employee_data (
+    CREATE OR REPLACE TABLE nyc_taxi_demo_db.raw_layer.raw_employee_data (
         id INT, 
         name STRING, 
         age INT, 
