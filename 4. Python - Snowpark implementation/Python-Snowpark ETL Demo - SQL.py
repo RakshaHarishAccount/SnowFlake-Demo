@@ -37,6 +37,7 @@ def main(session: snowpark.Session):
     
     # Write DataFrame to the raw_layer table directly for Step-1 of ETL
     df.write.mode("overwrite").save_as_table("nyc_taxi_demo_db.raw_layer.raw_employee_data")
+    print("Table 'raw_employee_data' created in the raw_layer")
     
     # Read raw_layer table into a DataFrame for step-2 of ETL
     raw_df = session.table("nyc_taxi_demo_db.raw_layer.raw_employee_data")
@@ -47,9 +48,10 @@ def main(session: snowpark.Session):
     # Create the table in staging_layer schema
     create_staging_table_query = """
     CREATE OR REPLACE TABLE nyc_taxi_demo_db.staging_layer.transformed_employee_data AS 
-    SELECT *, salary * 1.1 AS updated_salary FROM nyc_taxi_demo_db.raw_layer.employee_data;
+    SELECT *, salary * 1.1 AS updated_salary FROM nyc_taxi_demo_db.raw_layer.raw_employee_data;
     """
     session.sql(create_staging_table_query).collect()
+    print("Table 'transformed_employee_data' created in the staging_layer")
     
     # Read staging_layer table into a DataFrame for Step-3 of the ETL
     staging_df = session.table("nyc_taxi_demo_db.staging_layer.transformed_employee_data")
@@ -63,5 +65,6 @@ def main(session: snowpark.Session):
     SELECT *, CURRENT_TIMESTAMP AS processed_time FROM nyc_taxi_demo_db.staging_layer.transformed_employee_data;
     """
     session.sql(create_serving_table_query).collect()
+    print("Table 'final_employee_data' created in the serving_layer")
     
-    return "Pipeline executed: Data transformed and stored successfully."
+    return final_df
