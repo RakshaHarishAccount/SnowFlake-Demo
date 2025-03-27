@@ -22,7 +22,4 @@ This repository contains the data (CSV files) and SQL/Python code that will be u
 3. Instead of using a CSV file as a source of data in the internal stage "github_stage", a dataframe is created and used as source data in the Python implementation files.
 4. Assumption : The schemas and the database are already created during the SQL demo execution
 5. Run either of the 2 Python files to execute the ETL demo in snowflake using Python+SnowPark framework
-   
-## To Do
 
-1. Time-Travel scenario implementation in 7th SQL file  
